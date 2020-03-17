@@ -1,5 +1,7 @@
 server:
   port: 9099
+#  servlet:
+#    context-path: /sentinel
 
 logging:
   level:
@@ -12,5 +14,15 @@ logging:
                 annotation: TRACE
 
 spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:18080
+        #heartbeat-interval-ms: 2000
+        client-ip: localhost
+      eager: true
   application:
     name: simple_sentinel
+
+
+
