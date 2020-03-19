@@ -5,7 +5,9 @@ import com.tank.protocol.ApiRes;
 import com.tank.protocol.order.OrderPayedReq;
 import com.tank.protocol.order.OrderPayedRes;
 import com.tank.protocol.order.PayResult;
+import com.tank.util.KeySeq;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,6 +45,18 @@ public class OrderController {
         .ok(ApiRes.<OrderPayedRes>builder().build().setCode(PayResult.Success.ordinal()));
     return response;
   }
+
+
+  @GetMapping("/key")
+  public ResponseEntity<ApiRes<String>> key() {
+    String key = keySeq.take();
+    ApiRes<String> result = ApiRes.<String>builder().build().setBody(key).setCode(200);
+    return ResponseEntity.ok(result);
+  }
+
+
+  @Autowired
+  private KeySeq keySeq;
 
 
 }
