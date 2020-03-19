@@ -1,4 +1,4 @@
-package com.tank.protocol;
+package com.tank.protocol.order;
 
 import com.google.common.base.MoreObjects;
 import lombok.Getter;
