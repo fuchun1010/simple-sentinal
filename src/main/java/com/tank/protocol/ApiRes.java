@@ -5,6 +5,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+/**
+ * @param <T>
+ * @author tank198435163.com
+ */
 @Getter
 @Setter
 @Accessors(chain = true)

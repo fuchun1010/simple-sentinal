@@ -1,38 +1,28 @@
 package com.tank;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit test for simple App.
  */
-public class SimpleSentinelAppTest
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public SimpleSentinelAppTest(String testName )
-    {
-        super( testName );
-    }
+public class SimpleSentinelAppTest {
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( SimpleSentinelAppTest.class );
-    }
+  @Test
+  public void test() {
+    System.out.println("only test");
+  }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+
+  @BeforeAll
+  public void init() {
+
+  }
+
+  @AfterAll
+  public void destroy() {
+
+  }
 }
